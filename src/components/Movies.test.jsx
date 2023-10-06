@@ -3,7 +3,7 @@ import { describe, test, it } from "vitest";
 import Movies from "./Movies";
 
 describe("Movies component", () => {
-  it("should have heading stating populära filmer", () => {
+  it("has a heading stating populära filmer", () => {
     // Arrange
     render(<Movies />);
 
@@ -14,7 +14,7 @@ describe("Movies component", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  describe("should have a button for adding favorites", () => {
+  describe("has a button for adding favorites", () => {
     it("says gör till favorit", () => {
       render(<Movies />);
       const button = screen.getByRole("button", { name: /gör till favorit/i });
@@ -27,7 +27,7 @@ describe("Movies component", () => {
       expect(button).toHaveStyle({ backgroundColor: "rgb(0, 255, 0)" });
     });
 
-    it("changes the background color to red when clicked", () => {
+    it("clicking changes the background color to red", () => {
       render(<Movies />);
       const button = screen.getByRole("button", { name: /gör till favorit/i });
       fireEvent.click(button);
@@ -44,8 +44,8 @@ describe("Movies component", () => {
       expect(button).toBeDisabled();
     });
   });
-  describe("should have a checkbox for disabling the add to favorites button", () => {
-    it("checkbox should unchecked initially", () => {
+  describe("has a checkbox for disabling the add to favorites button", () => {
+    it("is unchecked initially", () => {
       render(<Movies />);
       const checkbox = screen.getByRole("checkbox", {
         name: /Avaktivera favoritknappen/i,

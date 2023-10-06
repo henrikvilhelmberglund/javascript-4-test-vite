@@ -24,14 +24,14 @@ describe("Movies component", () => {
     it("has a green background color", () => {
       render(<Movies />);
       const button = screen.getByRole("button", { name: /gör till favorit/i });
-      expect(button).toHaveStyle({ backgroundColor: "rgb(0,255,0)" });
+      expect(button).toHaveStyle({ backgroundColor: "rgb(0, 255, 0)" });
     });
 
     it("changes the background color to red when clicked", () => {
       render(<Movies />);
       const button = screen.getByRole("button", { name: /gör till favorit/i });
       fireEvent.click(button);
-      expect(button).toHaveStyle({ "background-color": "rgb(255,0,0)" });
+      expect(button).toHaveStyle({ "background-color": "rgb(255, 0, 0)" });
     });
 
     it("is disabled when the checkbox is checked", () => {
